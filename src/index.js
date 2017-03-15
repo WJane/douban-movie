@@ -14,12 +14,13 @@ const store = createStore(
 )
 
 render(
-  <Provider store = {store}>
-    <Router history = {browserHistory}>
-      <Route path="/" component={App} >
+    <Provider store={store}>
+    <Router history={browserHistory}>
+      <Route path="/"  >
+        <IndexRoute component={App}/>
       </Route>
-    </Router>
 
+    </Router>
   </Provider>,
-  document.getElementById('root')
-);
+    document.getElementById('root')
+)

@@ -1,10 +1,15 @@
 const initialState = {
-  theater: []
+  theaterList: []
 }
 
 export default function movie(state = initialState, action) {
-  return ({
-    ...state,
-    theater: action.list
-  })
+  switch (action.type) {
+    case 'GET_THEATER':
+      return({
+        ...state,
+        theaterList: action.tlist
+      })
+    default:
+      return state
+  }
 }
