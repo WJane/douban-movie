@@ -9,7 +9,7 @@ import Header from '../components/Header'
 export class App extends React.Component {
 
   componentWillMount = () => {
-    this.props.actions.getTheater()
+    this.props.actions.getNew()
 
   }
 
@@ -18,8 +18,8 @@ export class App extends React.Component {
 
     return (
       <div>
-
-        <List theaters={state.movie.theaterList} actions={actions} />
+        <Header/>
+        <List theaters={state.movie.newList} actions={actions} />
       </div>
     )
   }

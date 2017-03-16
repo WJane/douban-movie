@@ -24,6 +24,55 @@ export const getTheater = (query = defaultQuery) => dispatch => {
 
 }
 
+
+export const getTop = (query = defaultQuery) => dispatch => {
+  const url = "http://api.douban.com/v2/movie/top250"
+  let topList = []
+
+  jsonp(url, null, function(err, data) {
+
+    topList = data.subjects
+
+    dispatch({
+      type: 'GET_TOP',
+      tolist: topList
+    })
+  })
+
+}
+
+export const getNew = (query = defaultQuery) => dispatch => {
+  const url = "http://api.douban.com/v2/movie/coming_soon"
+  let newList = []
+
+  jsonp(url, null, function(err, data) {
+
+    newList = data.subjects
+
+    dispatch({
+      type: 'GET_NEW',
+      nlist: newList
+    })
+  })
+
+}
+
+export const getBox = (query = defaultQuery) => dispatch => {
+  const url = "http://api.douban.com/v2/movie/us_box"
+  let boxList = []
+
+  jsonp(url, null, function(err, data) {
+
+    boxList = data.subjects
+
+    dispatch({
+      type: 'GET_BOX',
+      blist: boxList
+    })
+  })
+
+}
+
 export const getDetail = (id) => dispatch => {
   const url = "http://api.douban.com/v2/movie/subject/"+id
 
