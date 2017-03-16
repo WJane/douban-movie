@@ -1,5 +1,6 @@
 const initialState = {
-  theaterList: []
+  theaterList: [],
+  detail: {}
 }
 
 export default function movie(state = initialState, action) {
@@ -9,6 +10,14 @@ export default function movie(state = initialState, action) {
         ...state,
         theaterList: action.tlist
       })
+
+    case 'GET_DETAIL':
+
+      return({
+        ...state,
+        detail: action.details
+      })
+
     default:
       return state
   }

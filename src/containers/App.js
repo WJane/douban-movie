@@ -9,10 +9,12 @@ export class App extends React.Component {
 
   componentWillMount = () => {
     this.props.actions.getTheater()
+
   }
 
   render() {
     const {state, actions} = this.props
+
     return (
       <div>
         <List theaters={state.movie.theaterList} actions={actions} />

@@ -7,18 +7,33 @@ let defaultQuery = {
   tab: 'all'
 }
 
+//TODO:  错误处理
 export const getTheater = (query = defaultQuery) => dispatch => {
   const url = "http://api.douban.com/v2/movie/in_theaters"
   let theaterList = []
-  console.log('ddd')
+
   jsonp(url, null, function(err, data) {
-    console.log(url)
+
     theaterList = data.subjects
-    console.log(data)
+
     dispatch({
       type: 'GET_THEATER',
       tlist: theaterList
     })
   })
 
+}
+
+export const getDetail = (id) => dispatch => {
+  const url = "http://api.douban.com/v2/movie/subject/"+id
+
+  let detail = {}
+  jsonp(url, null, function(err, data){
+    detail = data
+    console.log(detail.images.large)
+    dispatch({
+      type: 'GET_DETAIL',
+      details: detail
+    })
+  })
 }

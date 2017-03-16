@@ -8,6 +8,8 @@ import App from './containers/App'
 import reducer from './reducers'
 import {Router, Route, browserHistory, IndexRoute} from 'react-router'
 
+import Detail from './containers/Detail'
+
 const store = createStore(
   reducer,
   applyMiddleware(thunk)
@@ -19,7 +21,7 @@ render(
       <Route path="/"  >
         <IndexRoute component={App}/>
       </Route>
-
+      <Route path="/movie/:id" component={Detail}></Route>
     </Router>
   </Provider>,
     document.getElementById('root')
