@@ -13,6 +13,7 @@ import Header from './components/Header'
 import Top from './containers/Top'
 import New from './containers/New'
 import Box from './containers/Boxoffice'
+import './App.css';
 
 const store = createStore(
   reducer,

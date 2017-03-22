@@ -3,13 +3,20 @@ import {Link} from 'react-router'
 
 
 const style = {
+
+  body: {
+
+
+  },
+
   content: {
     height: '180px',
     width: '650px',
     display: 'flex',
     alignItems: 'center',
-    backgroundColor: '#f4f5f7',
-    margin: '10px auto'
+    backgroundColor: '#fff',
+    margin: '10px auto',
+    paddingLeft: '30px'
   },
   info: {
     marginLeft: '30px'
@@ -43,7 +50,7 @@ export default class List extends React.Component {
     })
 
     return (
-      <div>
+      <div  style={style.body}>
         {block}
       </div>
     )

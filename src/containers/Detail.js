@@ -4,6 +4,31 @@ import { connect } from 'react-redux'
 import * as detailActions from '../actions'
 import { browserHistory, Link } from 'react-router'
 
+const style = {
+  links: {
+    display: 'inline-block',
+    width: '150px',
+    height: '40px',
+    backgroundColor: '#2959b2',
+    color: '#fff',
+    transform: 'skewX(-45deg)',
+    textAlign: 'center',
+    lineHeight: '40px',
+    marginTop: '20px',
+    marginLeft: '30px'
+  },
+  lincon: {
+    display: 'inline-block',
+    transform: 'skewX(45deg)',
+    color: '#fff',
+    textDecoration: 'none'
+  },
+  content: {
+    width: '800px',
+    margin: '20px auto',
+    color: '#fff'
+  }
+}
 class Detail extends React.Component {
   state = {
     summary: ''
@@ -26,15 +51,16 @@ class Detail extends React.Component {
 
     return (
       <div>
-        <p><Link to={`/`}>主页</Link>/详情页</p>
+        <p style={style.links}><Link style={style.lincon} to={`/`}>主页</Link><span style={style.lincon}>/详情页</span></p>
+        <div style={style.content}>
 
-        <div>{detail.summary}</div>
-        <div>{detail.title}</div>
-        <div>{detail.year}</div>
-        <div>{detail.countries}</div>
-        <div>{detail.genres}</div>
-        <div>{detail.original_title}</div>
-
+          <div>名字：{detail.title}</div>
+          <div>年份：{detail.year}</div>
+          <div>国家：{detail.countries}</div>
+          <div>类型：{detail.genres}</div>
+          <div>原名：{detail.original_title}</div>
+          <div>摘要：{detail.summary}</div>
+        </div>
       </div>
     )
   }
