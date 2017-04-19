@@ -20,7 +20,7 @@ git clone https://github.com/WJane/douban-movie.git
 ```
 - 进入项目目录
 ```
-cd CMS-of-Blog
+cd douban-movie
 ```
 - 安装依赖
 ```
